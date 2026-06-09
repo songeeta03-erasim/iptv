@@ -242,69 +242,53 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-function buildCategories(){
-
-    const bar =
-        document.getElementById("categoryBar");
-
+function buildCategories() {
+    const bar = document.getElementById("categoryBar");
     bar.innerHTML = "";
 
-    const categories = [
-        "All Channels",
-        ...new Set(
-            allChannels.map(
-                c=>c.category
-            )
-        )
-    ];
+    // Collect unique categories (ignore empty)
+    let categories = [...new Set(allChannels.map(c => c.category).filter(Boolean))];
 
-    categories.forEach(category=>{
+    // If no categories exist, leave bar empty
+    if (categories.length === 0) return;
 
-        const btn =
-            document.createElement("button");
-
-        btn.innerText =
-            category;
-
-        btn.onclick = ()=>{
-
-            currentCategory =
-                category;
-
+    categories.forEach(category => {
+        const btn = document.createElement("button");
+        btn.innerText = category;
+        btn.onclick = () => {
+            currentCategory = category;
             applyFilters();
-
         };
-
         bar.appendChild(btn);
-
     });
 
+    // Responsive layout
+    bar.style.display = "flex";
+    bar.style.flexWrap = "wrap";
+    bar.style.gap = "8px";
 }
 
-function applyFilters(){
 
-    const search =
-        document.getElementById("searchInput").value.toLowerCase();
+function applyFilters() {
+    const search = document.getElementById("searchInput").value.toLowerCase();
 
     filteredChannels = allChannels.filter(channel => {
-
         const name = (channel.name || "").toLowerCase();
 
         const categoryMatch =
-            currentCategory === "All Channels"
-            || channel.category === currentCategory;
+            currentCategory === "All Channels" ||
+            channel.category === currentCategory ||
+            (!channel.category && currentCategory === "All Channels");
 
         const searchMatch = name.includes(search);
-
-        const favoriteMatch =
-            !showOnlyFavorites || favorites.includes(channel.name);
+        const favoriteMatch = !showOnlyFavorites || favorites.includes(channel.name);
 
         return categoryMatch && searchMatch && favoriteMatch;
-
     });
 
     renderChannels();
 }
+
 
 function toggleFavorite(event, name){
 
