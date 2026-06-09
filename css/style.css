@@ -1,0 +1,297 @@
+body{
+    background:#070b17;
+    color:white;
+    font-family:Arial;
+    margin:0;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+}
+
+.header{
+    padding:20px;
+}
+
+.header h1{
+    color:#ff0033;
+}
+
+.video-section{
+    margin:20px 0;
+}
+
+video{
+    width:100%;
+    height:350px;
+    background:black;
+    border-radius:10px;
+}
+
+.category-bar{
+    margin:15px 0;
+}
+
+.category-bar button{
+    background:#111827;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    margin-right:10px;
+}
+
+.search-box input{
+    
+    padding:15px;
+    background:#111827;
+    border:none;
+    color:white;
+    border-radius:10px;
+}
+
+.channel-item{
+    display:flex;
+    align-items:center;
+    padding:15px;
+    margin-top:10px;
+    background:#101827;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.channel-item:hover{
+    background:#ff003320;
+}
+
+.channel-number{
+    color:#ff0033;
+    width:40px;
+}
+
+
+
+.menu-btn{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:1001;
+    background:#ff0033;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+.drawer{
+    position:fixed;
+    top:0;
+    right:-320px;
+    width:300px;
+    height:100%;
+    background:#101827;
+    z-index:1000;
+    transition:0.3s;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.drawer.open{
+    right:0;
+}
+
+.drawer-section{
+    margin-bottom:20px;
+}
+
+.drawer input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    background:#1f2937;
+    color:white;
+}
+
+.drawer button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    background:#ff0033;
+    color:white;
+}
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:999;
+}
+
+.overlay.show{
+    display:block;
+}
+
+
+.channel-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    margin-bottom:10px;
+    background:#111827;
+    border-radius:12px;
+}
+
+.channel-logo{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.channel-info{
+    flex:1;
+}
+
+.channel-name{
+    font-size:15px;
+    font-weight:bold;
+}
+
+.channel-category{
+    font-size:12px;
+    opacity:.6;
+}
+
+.fav-btn{
+    background:none;
+    border:none;
+    color:gold;
+    font-size:20px;
+}
+
+
+
+body{
+    margin:0;
+    background:#0b1220;
+    font-family:Arial;
+    color:white;
+}
+
+/* MAIN APP */
+.app{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px;
+    background:#111827;
+}
+
+.logo{
+    font-weight:bold;
+    color:#ff004c;
+    margin-right:10px;
+}
+
+#searchInput{
+    width:30%;
+    flex:1;
+    padding:8px;
+    background:#1f2937;
+    border:none;
+    color:white;
+    border-radius:6px;
+}
+
+.categories button{
+    margin:0 5px;
+    padding:6px 10px;
+    border:none;
+    border-radius:6px;
+    background:#1f2937;
+    color:white;
+    cursor:pointer;
+}
+
+/* MAIN AREA */
+.main{
+    display:flex;
+    flex:1;
+    overflow:hidden;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:320px;
+    overflow-y:auto;
+    background:#0f172a;
+}
+
+/* PLAYER */
+.player{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:black;
+}
+
+video{
+    width:100%;
+    height:100%;
+}
+
+/* CHANNEL ITEM */
+.channel-item{
+    display:flex;
+    padding:10px;
+    cursor:pointer;
+    border-bottom:1px solid #1f2937;
+}
+
+.channel-item:hover{
+    background:#1f2937;
+}
+
+.channel-name{
+    font-size:14px;
+}
+
+
+
+.channel-item.active{
+    background:#ff004c;
+    color:white;
+}
+
+.channel-item.active .channel-name{
+    font-weight:bold;
+}
+
+
+
+.loader{
+    position:absolute;
+    top:50%;
+    left:60%;
+    transform:translate(-50%,-50%);
+    color:white;
+    background:rgba(0,0,0,0.6);
+    padding:10px 20px;
+    border-radius:8px;
+    display:none;
+}
